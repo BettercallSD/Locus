@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body style="background-color: blueviolet;height: 100vh;display: flex;justify-content: center;align-items: center;">
+<div>
+    <div id="result-display"style="height: 20vh;background-color: white;">Result</div>
+ 
+    <div style="color: gray;width: 18vh;background-color: gray;height: 18vh;">
+        <button onclick="handleClick(1)">1</button>
+                <button onclick="handleClick(2)">2</button>
+                        <button onclick="handleClick(3)">3</button>
+        <button onclick="handleClick(4)">4</button>
+<button onclick="handleClick(5)">5</button>
+<button onclick="handleClick(6)">6</button>
+<button onclick="handleClick(7)">7</button>
+<button onclick="handleClick(8)">8</button>
+<button onclick="handleClick(9)">9</button>
+<button onclick="handleClick(0)">0</button>
+<button onclick="handleClick('+')">+</button>
+<button onclick="handleClick('-')">-</button>
+<button onclick="handleClick('*')">*</button>
+<button onclick="handleClick('/')">/</button>
+<button onclick="handleClick('=')">=</button>
+<button onclick="handleClick('C')">C</button>
+
+    </div>
+    </div>
+        <script>
+            let store="";
+            function handleClick(a){
+                if(a==="="){
+                    try {
+                        store=eval(store).toString();
+
+                    }catch{
+                        store="";
+                        document.querySelector("#result-display").innerText="Error";
+                        return;
+                    }}
+                    else if(a==="C"){
+                        store="";
+
+                    } else{
+                        store +=a;   
+                    }
+                    document.querySelector("#result-display").innerText=store;
+                }
+                
+
+            
+    </script>
+</body>
+</html>
